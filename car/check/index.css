@@ -1,0 +1,16 @@
+#gameCanvas{
+    width: 100%;
+    height: 100vh;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html,
+  body {
+    height: 100%;
+    color: #272727;
+    font-family: "PingFangSC-Regular", "微软雅黑", "Microsoft YaHei";
+    background: url(./res/bg-road.png) no-repeat;
+    background-size: 100% 100%;
+  }

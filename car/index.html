@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <!--<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection"content="telephone=no, email=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body style="height: 100%">
+<div class="music-box">
+    <audio src="./bgm/1.mp3" autoplay id="music"></audio>
+    <img id="f-icon" src="./res/music-icon2.png" alt="" class="music-icon">
+    <div id="container"> 
+      <ul id="content"> 
+        <li><img src="./res/music-icon1.png"/></li> 
+        <li><img src="./res/music-icon1.png"/></li>  
+      </ul> 
+    </div> 
+</div>
+<div class="main-page">
+    <img class="logo" src="./res/logo.png" alt="">
+    <div class="w-title">
+        <img class="slogan" src="./res/slogan.png" alt="">
+        <img class="d-title" src="./res/d-title.png" alt="">
+    </div>
+    <img class="car" src="./res/car.png" alt="">
+    <div class="btns">
+        <div class="start btn"><img  class="start-btn" src="./res/start.png" alt=""></div>
+        <div class="all-rules">
+            <div class="rules btn">
+                <img src="./res/rules.png" alt="">
+            </div>
+            <!--游戏规则-->
+            <div class="rule-pop">
+                <div class="pop">
+                    <div class="pop-content">
+                        <h2 class="pop-title">游戏规则</h2>
+                        <p class="subtitle">规则一</p>
+                        <p class="rule-des">玩家通过左右滑动控制金菓EV，赛道上设置有宝盒和障碍物，每个宝盒有一条线索，玩家需接住所有宝盒才能获得相应分数才能闯关成功，但若接住障碍物则会被扣分，得分越高者，就能进入排行榜（一个宝盒200分，一个障碍物20分，扣完即游戏结束）。</p>
+                        <p class="subtitle">规则二</p>
+                        <p class="rule-des">截止10月25日前，排行榜前十名同学即可到相应城市的宣讲会现场领取精美礼品。</p>
+                    </div>
+                    <div class="rule-close">&times;</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="all-ranking">
+            <div class="ranking btn">
+                <img src="./res/ranking.png" alt="">
+            </div>
+            <!--排行榜-->
+        </div>        
+    </div>
+
+</div>
+        <!--游戏碰撞弹层-->
+<div class="game-pop-wrap">
+    <div class="intro-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">公司简介</h2>
+                <p class="intro-des">小康股份成立于1986年，是一家以智能(电动)汽车和发动机为核心业务、汽车整车为主营业务的实体制造企业，现已形成集汽车整车、发动机、汽车零部件的自主研发、  制造、  销售及服务于- -体的完整产业链。业务还涉及汽车租赁和互联网消费金融。</p>
+                <p class="intro-des">下辖动力公司、新能源汽车公司、部品公司、进出口公司等多家全资子公司，以及与东风公司合资成立的东风小康汽车有限公司，主营产品包括超级都市SUV、紧凑型MPV、纯电动微型商用车等整车以及1.0-1 .8升、  1.5T缸内直喷涡轮增压等节能环保高性能发动机。产品远销70多个国家和地区。产值近300亿元，员工万余人。2016年6月15日，公司在A股成功上市,  股票代码601127。
+                </p>
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div>
+    <div class="route-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">招聘行程</h2>
+                <div class="route">
+                    <div class="city">成都</div>
+                    <p class="route-des">9月19日  14:00
+                        <br />成都天之府温德姆至尊
+                        <br />豪廷大酒店-香港厅
+                    </p>
+                </div>
+                <div class="route">
+                    <div class="city">西安</div>
+                    <p class="route-des">9月26日  14:00
+                        <br />西安建国饭店-南湖会议室B
+                    </p>
+                </div>
+                <div class="route">
+                    <div class="city">上海</div>
+                    <p class="route-des">10月18日  14:00
+                        <br />上海粤海酒店-木棉厅
+                    </p>
+                </div>
+                <div class="route">
+                    <div class="city">威海</div>
+                    <p class="route-des">10月22日  14:00
+                        <br />威海海悦建国酒店-3楼F会议室
+                    </p>
+                </div>
+                <div class="route">
+                    <div class="city">北京</div>
+                    <p class="route-des">10月25日  14:00
+                        <br />北京文津国际酒店-献天寿厅
+                    </p>
+                </div>
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div>
+    <div class="demand-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">企业需求</h2>
+                <!-- <p class="demand">
+                    项目管理、统计学、产品质量工程、管理科学
+                    <br />计算机应用技术、计算机与信息管理相关专业
+                    <br />安全工程、环境工程、安全科学与工程
+                    <br />传媒学、广告学、市场营销相关专业
+                    <br />化学工程与工艺、应用化学相关专业
+                    <br />网络经济学、物流管理、物联网工程
+                    <br />焊接工艺及设备、焊接技术与工程
+                    <br />车辆工程、机械工程相关专业
+                    <br />材料成型及控制工程相关专业
+                </p>
+                <div class="down-part">
+                    <p class="demand short">
+                        英语、翻译相关专业
+                        <br />工业设计、数字媒体
+                        <br />公共关系、国际贸易
+                        <br />工商管理相关专业
+                        <br />财务管理相关专业
+                        <br />电子仪器相关专业
+                        <br />电子技术与应用
+                    </p>
+                    <p class="demand short">
+                        嵌入式软件技术
+                        <br />嵌入式硬件应用
+                        <br />微电子技术
+                        <br />自动化控制
+                        <br />物流工程
+                        <br />汽车电子
+                    </p>
+                    <p class="demand short">
+                        工业工程
+                        <br />机械设计
+                        <br />软件工程
+                        <br />热能工程
+                        <br />测控仪器
+                        <br />机械类
+                        <br />数学
+                    </p>
+                </div> -->
+                <img class="dem-pic" src="./res/demand.png" alt="">
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div>
+    <div class="flow-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">招聘流程</h2>
+                <img src="./res/flow.png" alt="">
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div> 
+    <div class="culture-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">企业文化</h2>
+                <p class="subtitle">使命</p>
+                <p class="culture-des">推动汽车能源变革，创享智慧移动生活</p>
+                <p class="subtitle">愿景</p>
+                <p class="culture-des">成为全球智能汽车品牌企业</p>
+                <p class="subtitle">使命</p>
+                <p class="culture-des">推动汽车能源变革，创享智慧移动生活</p>
+                <p class="subtitle">核心价值观</p>
+                <p class="culture-des">       一切为了用户，超级奋斗，拥抱改变
+                    <br />诚信可靠，价值共享
+                </p>
+                <p class="subtitle">1+5战略策略</p>
+                <p class="culture-des">以用户为中心
+                    <br />业务投资聚焦、技术迭代引领、
+                    <br />质量效益优先、品牌向上占位、超级人才资本
+                </p>
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div>
+    <div class="welfare-pop hide">
+        <div class="pop">
+            <div class="pop-content">
+                <h2 class="pop-title">福利待遇</h2>
+                <img src="./res/welfare.png" alt="">
+            </div>
+            <div class="w-close">&times;</div>
+        </div>
+    </div>
+ 
+</div>
+<div class="all-ranking">
+    <!--排行榜-->
+    <div class="rank-pop-bg">
+        <div class="pop">
+                <div class="pop-content">
+                <h2 class="pop-title">排行榜</h2>
+                <ul id="score-list">
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                    <li><strong>1</strong>分数1200</li>
+                </ul>
+                <div class="rank-close">&times;</div>
+            </div>
+            <div class="again" onclick="restart()" >再玩一次</div>
+            <div class="apply">简历投递</div>
+            <div class="share">分享</div>
+        </div>
+    </div>
+    <div class="rank-pop">  
+        <div class="apply-pop hide">
+            <img class="apply-logo" src="./res/logo.png" alt="">
+            <div class="ewm-box">
+                <img class="ewm"  src="./res/ewm.png" alt="">
+            </div>
+        </div> 
+        <div class="share-pop hide">
+            <img style="width: 15rem;position: fixed;top: 8%;left: 14%;" src="./res/share-part.png" alt="">
+        </div>
+    </div>
+    </div>
+<img class="light" style="display:none;" src="./res/light.png" alt="">
+<div class="left" style="display: none;" onclick="moveleft()"></div>
+<div class="right" style="display: none;" onclick="moveright()"></div>
+<canvas id="gameCanvas" style="display:none;" width="750" height="1206"></canvas>
+
+
+<script src="./js/jquery-1.9.1.min.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/index.js"></script>
+   
+    <script>
+    $(document).ready(function () {
+        gWinHeight = document.body.clientHeight;
+        gWinWidth = document.body.clientWidth;
+        //首页弹层交互
+        $('.rules').click(function () {
+            $(".all-rules").children('.rule-pop').show();
+        });
+        $('.ranking').click(function () {
+            $(".all-ranking").children('.rank-pop-bg').show();
+        });
+        $(".apply").click(function(){
+            $(".apply-pop").show();
+        });
+        $(".share").click(function(){
+            $(".share-pop").show();
+        })
+        //关闭按钮
+        $('.close').click(function () {
+            $(this).parent().parent().hide();
+            time = setInterval(loop, 1000 / 120);
+        });
+        $('.w-close').click(function () {
+            $(this).parent().parent().hide();
+            time = setInterval(loop, 1000 / 120);
+        });
+        $('.rule-close').click(function () {
+            $(this).parent().parent().hide();
+        });
+        $('.rank-close').click(function () {
+            $('.rank-pop-bg').hide();
+            $('#gameCanvas').hide();
+            $('.main-page').show();
+            $(".light").hide();
+            $(".right").hide();
+            $(".left").hide();
+            clearInterval(time);
+            window.location.href = location.href+'?time='+((new Date()).getTime());
+
+        });
+      $('.start-btn').click(function (){
+        $("body").addClass('changeBg');
+        $('#gameCanvas').show();
+        $('.main-page').hide();
+        $(".light").show();
+        $(".right").show();
+        $(".left").show();
+        return init();
+      });
+    })
+    </script> 
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+    <script type="text/javascript">
+    document.addEventListener("WeixinJSBridgeReady", function () { 
+        document.getElementById('music').play(); 
+    }, false);
+    </script>
+</body>
+</html>

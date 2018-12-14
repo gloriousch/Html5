@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .music-box {
+  position: fixed;
+  z-index: 99;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+.music-box .music-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  /* background-color: #272727; */
+}
+    </style>
+</head>
+<body>
+    <!-- <marquee direction="right">aaaa</marquee> -->
+    <div class="music-box">
+            <audio src="./bgm/1.mp3" loop id="music"></audio>
+            <img id="f-icon" src="./res/music-icon2.png" alt="" class="music-icon">
+            <marquee><img id="line" src="./res/music-icon1.png" alt="" class="music-icon"></marquee>
+        </div>
+    <script>
+        var a=[2,4,6,8,4,3];
+        for(var i=0;i<a.length;i++){
+            console.log(a[i]);
+        }
+        
+    </script>
+    
+
+</body>
+</html>

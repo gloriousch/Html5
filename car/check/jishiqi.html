@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div>当前时间为:<span id="timeNow"></span> </div>
+        <button id="timeBegin">计时开始</button>
+        <button id="timeEnd">计时结束</button>
+        <button id="timeClear">计时清除</button>
+        <script type="text/javascript">
+            //定义初始值 计时器
+            var count = 0;
+            var timer = "";
+         
+            //开始计时
+            function BeginTime(){
+                var beginBtn = document.getElementById("timeBegin");
+                beginBtn.onclick = function(){
+                    timer = setInterval(function(){
+                        count ++ ;
+                        document.getElementById("timeNow").innerHTML = count / 100;
+                    },10)
+                }
+            }
+         
+            //结束计时
+            function EndTime(){
+                var endBtn = document.getElementById("timeEnd");
+                endBtn.onclick = function(){
+                    clearInterval(timer);
+                }
+            }
+         
+            //计时清除
+            function ClearTime(){
+                var clearBtn = document.getElementById("timeClear");
+                clearBtn.onclick = function(){
+                    document.getElementById("timeNow").innerHTML = "";
+                }
+            }
+         
+            BeginTime();
+            EndTime();
+            ClearTime();
+        </script>
+         
+</body>
+</html>
