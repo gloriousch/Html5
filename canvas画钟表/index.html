@@ -8,61 +8,87 @@
             margin: 0;
             padding: 0;
         }
-        #cvs{
-            background: #f5f5f5;
-        }
     </style>
 </head>
 <body>
-<canvas id="cvs" width="500" height="500">
+    <canvas id="cvs" width="600"height="600">
 
-</canvas>
+    </canvas>
     <script>
-    //dom
-    var oCvs =document.querySelector('#cvs');
-    //huihuabufen
-    var oCtx =oCvs.getContext('2d');
+        var oCvs =document.getElementById('cvs');
+        var oCtx =oCvs.getContext('2d');
 
-    oCtx.beginPath();
-//    oCtx.arc(100,100,80,0,Math.PI*2,false);
-    oCtx.arc(250,250,200,0,360,false);
-    oCtx.stroke();
+        function  drawClock() {
 
-//    oCtx.beginPath();
-//    oCtx.moveTo(250,250);
-//    oCtx.lineTo(140,140);
-//    oCtx.stroke();
-//
-//    oCtx.beginPath();
-//    oCtx.moveTo(250,250);
-//    oCtx.lineTo(140,100);
-//    oCtx.stroke();
-//
-//    oCtx.beginPath();
-//    oCtx.moveTo(250,250);
-//    oCtx.lineTo(140,50);
-//    oCtx.stroke();
 
-    //刻度
-        for(var i=0;i<12;i++){
-            oCtx.lineWidth = 2;
-            oCtx.strokeStyle="#000";
-            oCtx.translate(250,250);
-            oCtx.rotate(30*Math.PI/180);
             oCtx.beginPath();
-            oCtx.moveTo(0,-170);
-            oCtx.lineTo(0,-190);
+            for (var i = 0; i < 60; i++) {
+
+                oCtx.moveTo(300, 300);
+                oCtx.arc(300, 300, 100, i * 6 * Math.PI / 180, (i + 1) * 6 * Math.PI / 180);
+            }
             oCtx.stroke();
             oCtx.closePath();
-        }
-        //xiao ke du
-        for(var i=0;i<60;i++){
-            oCtx.lineWidth =1;
-            oCtx.strokeStyle="#000";
-            oCtx.translate(250,250);
-            oCtx.rotate(6*Math.PI/180);
+
             oCtx.beginPath();
+            oCtx.arc(300, 300, 95, 0 * Math.PI, 2 * Math.PI);
+            oCtx.fillStyle = "#fff";
+            oCtx.fill();
+            oCtx.closePath();
+//时针刻度
+            oCtx.beginPath();
+            for (var j = 0; j < 12; j++) {
+
+                oCtx.moveTo(300, 300);
+                oCtx.arc(300, 300, 100, j * 30 * Math.PI / 180, j * 30 * Math.PI / 180);
+
+            }
+            oCtx.stroke();
+            oCtx.closePath();
+
+            oCtx.beginPath()
+            oCtx.arc(300, 300, 90, 0 * Math.PI, 2 * Math.PI);
+            oCtx.fillStyle = "#fff";
+            oCtx.fill();
+            oCtx.closePath();
         }
-</script>
+function run() {
+        var now = new Date();
+        var sec = now.getSeconds();
+        var min = now.getMinutes();
+        var hour = now.getHours();
+        hour = hour + min / 60;
+        oCtx.clearRect(245, 245,110,110);
+            //秒针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,55,(sec*6-90)*Math.PI/180,(sec*6-90)*Math.PI/180);
+            oCtx.lineWidth=2;
+            oCtx.strokeStyle="red";
+            oCtx.stroke();
+            oCtx.closePath();
+            //分针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,45,(min*6-90)*Math.PI/180,(min*6-90)*Math.PI/180);
+            oCtx.lineWidth=4;
+            oCtx.strokeStyle="green";
+            oCtx.stroke();
+            oCtx.closePath();
+            //时针
+            oCtx.beginPath();
+            oCtx.moveTo(300,300);
+            oCtx.arc(300,300,35,(hour*30-90)*Math.PI/180,(hour*30-90)*Math.PI/180);
+            oCtx.lineWidth=6;
+            oCtx.strokeStyle="#000";
+            oCtx.stroke();
+            oCtx.closePath();
+
+
+        }
+        drawClock();
+        run();
+        setInterval(run,1000);
+    </script>
 </body>
 </html>
